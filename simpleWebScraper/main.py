@@ -1,8 +1,8 @@
 from .scraper import get_html
 from .parser import parse_html
 
-def scrape(url, target_elem, use_selenium=False, parent_elem=None, parent_index=0, target_index=0, element_properties=["id", "class"], debug=False, return_html=False):
-    html, error = get_html(url, use_selenium=use_selenium, debug=debug)
+def scrape(url, target_elem, use_selenium=False, parent_elem=None, parent_index=0, target_index=0, element_properties=["id", "class"], debug=False, return_html=False, wait_until_fully_loaded=False):
+    html, error = get_html(url, use_selenium=use_selenium, debug=debug, wait_until_fully_loaded=wait_until_fully_loaded)
 
     if error:
         if return_html:
